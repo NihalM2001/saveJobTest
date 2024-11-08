@@ -19,6 +19,7 @@ public class JobModel {
     private long sNo;
     private String companyName;
     private String roleName;
+    private long salary;
     private String appliedDate;
     private String callback;
     private String interview;
