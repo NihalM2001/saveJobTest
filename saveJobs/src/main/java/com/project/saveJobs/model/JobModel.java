@@ -18,6 +18,7 @@ public class JobModel {
     @GeneratedValue
     private long sNo;
     private String companyName;
+    private String roleName;
     private String appliedDate;
     private String callback;
     private String interview;
