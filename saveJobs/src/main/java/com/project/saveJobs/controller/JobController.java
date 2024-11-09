@@ -3,10 +3,7 @@ package com.project.saveJobs.controller;
 import com.project.saveJobs.model.JobModel;
 import com.project.saveJobs.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,11 @@ public class JobController {
     public List<JobModel> listAllJob()
     {
         return jobSer.listAllJobs();
+    }
+
+    @GetMapping("/viewJobById/{id}")
+    public JobModel viewJobById(@PathVariable long id)
+    {
+        return jobSer.viewJobByID(id);
     }
 }
