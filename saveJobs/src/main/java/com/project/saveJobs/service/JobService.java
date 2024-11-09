@@ -28,4 +28,9 @@ public class JobService {
     {
         return jobRepo.findAll();
     }
+
+    public JobModel viewJobByID(long id)
+    {
+        return jobRepo.findById(id).get();
+    }
 }
