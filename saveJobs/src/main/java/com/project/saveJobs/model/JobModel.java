@@ -6,12 +6,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Entity
+@Getter
+@Setter
 @Table(name = "JobDetails")
 public class JobModel {
     @Id
