@@ -33,4 +33,17 @@ public class JobService {
     {
         return jobRepo.findById(id).get();
     }
+
+    public void editJob(JobModel jm)
+    {
+        JobModel jobModel = new JobModel();
+        boolean flag =  jobRepo.findById(jm.getSNo()).isPresent();
+        if(flag)
+        {
+            jobModel.setCallback(jm.getCallback());
+            jobModel.setInterview(jm.getInterview());
+            jobModel.setSelected(jm.getSelected());
+            jobRepo.save(jm);
+        }
+    }
 }
