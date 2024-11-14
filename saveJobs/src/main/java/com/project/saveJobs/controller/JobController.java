@@ -29,4 +29,12 @@ public class JobController {
     {
         return jobSer.viewJobByID(id);
     }
+
+    @PutMapping("/editJob")
+    public void editJob(@RequestBody JobModel jm)
+    {
+        jobSer.editJob(jm);
+    }
+
+
 }
