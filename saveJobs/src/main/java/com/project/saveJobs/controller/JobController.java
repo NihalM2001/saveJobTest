@@ -3,14 +3,23 @@ package com.project.saveJobs.controller;
 import com.project.saveJobs.model.JobModel;
 import com.project.saveJobs.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class JobController {
     @Autowired
     JobService jobSer;
+
+    //page link
+    @GetMapping("/")
+    public String home()
+    {
+        System.out.println("Home method accessed");
+        return "index";
+    }
 
     @PostMapping("/saveJob")
     public JobModel saveJob(@RequestBody JobModel jm)
