@@ -21,6 +21,14 @@ public class JobController {
         return "index";
     }
 
+    @GetMapping("/")
+    public String report()
+    {
+        return "report";
+    }
+
+
+    //controller logic here
     @PostMapping("/saveJob")
     public JobModel saveJob(@RequestBody JobModel jm)
     {
