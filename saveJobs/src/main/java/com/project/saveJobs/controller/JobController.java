@@ -15,7 +15,7 @@ public class JobController {
 
     //page link
     @GetMapping("/")
-    public String home()
+    public String start()
     {
         System.out.println("Home method accessed");
         return "index";
@@ -25,6 +25,12 @@ public class JobController {
     public String report()
     {
         return "report";
+    }
+
+    @GetMapping("/report")
+    public String home()
+    {
+        return "home";
     }
 
 
