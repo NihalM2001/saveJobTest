@@ -27,7 +27,7 @@ public class JobController {
         return "report";
     }
 
-    @GetMapping("/report")
+    @GetMapping("/home")
     public String home()
     {
         return "home";
