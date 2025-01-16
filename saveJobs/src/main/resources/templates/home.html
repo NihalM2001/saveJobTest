@@ -5,6 +5,24 @@
     <title>Home</title>
 </head>
 <body>
-<h1>Home page</h1>
+<div>
+    <div></div>
+    <div></div>
+    <form action="/saveJob" method="post">
+        <label for="companyName">Company Name</label>
+        <input type="text" id="companyName" name="companyName">
+
+        <label for="roleName">Role Name</label>
+        <input type="text" id="roleName" name="roleName">
+
+        <label for="salary">Salary</label>
+        <input type="text" id="salary" name="salary">
+
+        <label for="appliedDate">Applied Date</label>
+        <input type="date" id="appliedDate" name="appliedDate">
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
 </body>
 </html>

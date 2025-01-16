@@ -3,20 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <title>Start Page</title>
-    <link rel="stylesheet" href="../static/style.css">
     <style>
+        html{
+            margin: 0px;
+            box-sizing: border-box;
+            height: 100vh;
+        }
         body{
-        background-color:cyan;
+            margin: 0px;
+            height: 100%;
+        }
+        .container{
+            height: 100%;
+            display: grid;
+            grid-template-rows: 10% 90%;
+        }
+        .navbar{
+            background-color: lightblue;
+        }
+        .body{
+            background-color: #f4af2f;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+        }
+        .elements{
+            background-color: white;
+            display: grid;
+            justify-items: center;
+            align-content: space-evenly;
+            height: 50%;
+            width: 40%;
+            border-radius: 20px;
+            height: 60%;
+        }
+
+        a{
+            height: 200%;
+            border-radius: 20px;
+        }
+
+        a:hover{
+            scale: 1.1;
+            transition: 500ms;
+            background-color: #76bdd5;
+            border-radius: 20px;
+
+        }
+
+        .homeButton,.reportButton{
+            width: 70%;
+        }
+        button{
+            width: 100%;
+            border: 0px;
+            border-radius: 20px;
+            background-color: lightblue;
+            height: 100%;
+            border: 0px;
         }
     </style>
 </head>
 <body>
-<div class="container"></div>
-<h1>Start Page</h1>
-<h4><a th:href="@{/home}"><button>Home</button></a></h4>
-<h4><a th:href="@{/report}"><button>Report</button></a></h4>
-<h4></h4>
-<h2>hello.. welcome to the job saver website</h2>
+
+<div class="container">
+    <div class="navbar"></div>
+    <div class="body">
+        <div class="elements">
+            <h1 class="heading">Job Saver Project</h1>
+            <a th:href="@{/home}" class="homeButton"><button>Home</button></a>
+            <a th:href="@{/report}" class="reportButton"><button>Report</button></a>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

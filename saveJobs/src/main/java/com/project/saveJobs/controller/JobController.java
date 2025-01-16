@@ -36,9 +36,10 @@ public class JobController {
 
     //controller logic here
     @PostMapping("/saveJob")
-    public JobModel saveJob(@RequestBody JobModel jm)
+    public String saveJob(@ModelAttribute("jobSaver") JobModel jm)
     {
-        return jobSer.saveJob(jm);
+        jobSer.saveJob(jm);
+        return "redirect:/home";
     }
 
     @GetMapping("/listJob")
