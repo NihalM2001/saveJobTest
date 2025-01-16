@@ -4,9 +4,11 @@ import com.project.saveJobs.model.JobModel;
 import com.project.saveJobs.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 @Controller
 public class JobController {
@@ -43,9 +45,11 @@ public class JobController {
     }
 
     @GetMapping("/listJob")
-    public List<JobModel> listAllJob()
+    public String listAllJob(Model m)
     {
-        return jobSer.listAllJobs();
+        List<JobModel> jobList = jobSer.listAllJobs();
+        m.addAttribute("jobList",jobList);
+        return "report";
     }
 
     @GetMapping("/viewJobById/{id}")

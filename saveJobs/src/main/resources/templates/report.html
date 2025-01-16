@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Report</title>
 </head>
 <body>
-<h1>Report</h1>
+<h1>Job List</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Role Name</th>
+            <th>Salary</th>
+            <th>Applied Date</th>
+            <th>Callback</th>
+            <th>Interview</th>
+            <th>Selected</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="jobDesc:${jobList}">
+            <td th:text="${jobDesc.companyName}"></td>
+            <td th:text="${jobDesc.roleName}"></td>
+            <td th:text="${jobDesc.salary}"></td>
+            <td th:text="${jobDesc.appliedDate}"></td>
+            <td th:text="${jobDesc.callback}"></td>
+            <td th:text="${jobDesc.interview}"></td>
+            <td th:text="${jobDesc.selected}"></td>
+        </tr>
+    </tbody>
+
+</table>
 </body>
 </html>
